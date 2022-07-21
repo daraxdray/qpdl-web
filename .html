@@ -1,0 +1,86 @@
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN "http://www.w3.org/TR/html4/loose.dtd">
+    <html>
+    <meta name="robots" content="noindex, nofollow">
+    <head>
+        <title>ionCube Loader Wizard</title>
+        <link rel="stylesheet" type="text/css" href="/deprixa/loader-wizard.php?page=css">
+        <script type="text/javascript">
+            function showOverlay()
+            {
+                document.getElementById('overlay').style.display = 'block';
+                return true;
+            }
+
+            function hideOverlay()
+            {
+                document.getElementById('overlay').style.display = 'none';
+                return true;
+            }
+        </script>
+    </head>
+    <body onload="hideOverlay()">
+    <div id="overlay">
+        <div id="inner_overlay">Checking server configuration<br>Please wait</div>
+    </div>
+    <div id="header">
+        <img src="?page=logo" alt="ionCube logo">
+    </div>
+	<div id="important">
+	<h3 class="important">IMPORTANT: Ensure that This Script Is Removed When No Longer Required</h3>
+	</div>
+    <div id="main">
+    <h2>ionCube Loader Wizard</h2><h4>Additional Information</h4><table><tr><th>Loader is at:</th><td>/Applications/XAMPP/xamppfiles/lib/php/extensions/no-debug-non-zts-20190902/ioncube_loader_mac_7.4.so</td></tr><tr><th>Loader OS code:</th><td>osx</td></tr><tr><th>Loader architecture:</th><td>x86-64</td></tr><tr><th>Loader word size:</th><td>64</td></tr><tr><th>Loader PHP version:</th><td>7.4</td></tr><tr><th>Loader thread safety:</th><td>No</td></tr><tr><th>Loader compiler:</th><td>10.2</td></tr><tr><th>Loader version:</th><td>11.0r1</td></tr><tr><th>File size is:</th><td>1480704 bytes.</td></tr><tr><th>MD5 sum is:</th><td>5a4214dece557288ca6419da8128eb4d</td></tr><tr><th>Loader file:</th><td><a href="/deprixa/loader-wizard.php?page=loaderbin">Download loader file</a></td></tr><tr><th>Loader found in ini file:</th><td>Yes</td></tr><tr><th>OS extra security:</th><td>None</td></tr><tr><th>PHPRC is:</th><td><em>EMPTY</em></td></tr><tr><th>INI DIR is:</th><td><em>EMPTY</em></td></tr><tr><th>Additional INI files:</th><td>(none)</td></tr><tr><th>Server type is:</th><td>LOCAL</td></tr><tr><th>PHP uname:</th><td>Darwin Damilola 20.1.0 Darwin Kernel Version 20.1.0: Sat Oct 31 00:07:11 PDT 2020; root:xnu-7195.50.7~2/RELEASE_X86_64 x86_64</td></tr><tr><th>Server word size is:</th><td>64</td></tr><tr><th>Disabled functions:</th><td><em>EMPTY</em></td></tr><tr><th>Writeable loader locations:</th><td>/Applications/XAMPP/xamppfiles, /Applications/XAMPP/xamppfiles/cgi-bin</td></tr></table></div><div id="footer">Copyright ionCube Ltd. 2002-2022 | Loader Wizard version 2.69     <script type="text/javascript">
+    var xmlhttp;
+    function version_check()
+    { 
+        var body = document.getElementsByTagName('body')[0];
+        var ldel = document.getElementById('loading');
+        if (!ldel) {
+            body.innerHTML += '<div id="loading"></div>';
+            ldel = document.getElementById('loading');
+        }
+        ldel.innerHTML = '<p>Retrieving Wizard version information<br>Please wait</p>';
+        ldel.style.display = 'block';
+        ldel.style.height = '300px';
+        ldel.style.left = '200px';
+        ldel.style.border = '4px #660000 solid';
+        if (window.XMLHttpRequest) {
+            xmlhttp=new XMLHttpRequest();
+        } else {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            var loadedOkay = 0;
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var wizardversion = xmlhttp.responseText;
+                var msg;
+                clearTimeout(xmlHttpTimeout);
+                buttons = '';
+                if (wizardversion == '1') {
+                    msg = 'You have the current version of the<br>ionCube Loader Wizard'; 
+                } else if (wizardversion != '0') {
+                    msg = 'A new version, ' + wizardversion + ', of the loader wizard is available';
+                    buttons = '<button onclick="document.getElementById(\'loading\').style.display=\'none\'; window.open(\'https://loaders.ioncube.com/\'); return false">Get new version</button> &nbsp;'; 
+                } else {
+                    msg = 'Wizard version information cannot be obtained from the<br>ionCube server';
+                }
+                buttons += '<button onclick="document.getElementById(\'loading\').style.display=\'none\'; return false">Close this box</button>'; 
+                ldel.innerHTML = '<p>' + msg +  '<br>' + buttons + '</p>';
+            }
+        }
+        xmlhttp.open("GET",'/deprixa/loader-wizard.php?page=wizardversion&wizard_only=1&clear_info=1',true);
+        xmlhttp.send();
+        var xmlHttpTimeout=setTimeout(ajaxTimeout,7000);
+    }
+    function ajaxTimeout(){
+       xmlhttp.abort();
+       msg = 'Wizard version information cannot be obtained from the<br>ionCube server';
+       button = '<button onclick="document.getElementById(\'loading\').style.display=\'none\'; return false">Close this box</button>';
+       var ldel = document.getElementById('loading');
+       ldel.innerHTML = '<p>' + msg +  '<br>' + button + '</p>';
+    }
+    </script>(current) | <a href="/deprixa/loader-wizard.php?page=default" onclick="showOverlay();">wizard start</a> | <a href="/deprixa/loader-wizard.php?timeout=0&ini=0&amp;page=loader_check" onclick="showOverlay();">loader test</a> | <a href="https://loaders.ioncube.com/" target="loaders">loaders</a></div>
+
+</body></html>
